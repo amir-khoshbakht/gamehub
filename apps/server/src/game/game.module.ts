@@ -17,8 +17,8 @@ export const RAWG_API_KEY = 'RAWG_API_KEY';
         NODE_ENV: Joi.string()
           .valid(...Object.values(NODE_ENV))
           .default(NODE_ENV.DEVELOPMENT),
-        RAWG_API_HOST: Joi.string(),
-        RAWG_API_KEY: Joi.string(),
+        RAWG_API_HOST: Joi.string().required(),
+        RAWG_API_KEY: Joi.string().required(),
       }),
       validationOptions: {
         allowUnknown: true,
