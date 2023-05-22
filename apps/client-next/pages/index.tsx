@@ -22,14 +22,22 @@ type orderType = GamesQueryParams['ordering'];
 
 export default function Home() {
   return (
-    <>
-      <SearchBar />
-      <Box sx={{ overflow: 'auto' }}>
-        <ClientOnly>
-          <ExploreGames />
-        </ClientOnly>
+    <ClientOnly>
+      {' '}
+      <Box
+        sx={{
+          padding: 4,
+          backgroundImage: backgroundCSS,
+          backgroundAttachment: 'fixed',
+          height: '100vh',
+          position: 'relative',
+          overflow: 'scroll',
+        }}
+      >
+        <SearchBar />
+        <ExploreGames />
       </Box>
-    </>
+    </ClientOnly>
   );
 }
 
@@ -60,38 +68,28 @@ function ExploreGames() {
   };
 
   return (
-    <Box
-      sx={{
-        padding: 4,
-        backgroundImage: backgroundCSS,
-        backgroundAttachment: 'fixed',
-        height: '100vh',
-        position: 'relative',
-        right: 'calc((100% - 100vw)/2)',
-      }}
-    >
-      <Box sx={{ paddingLeft: 3, paddingTop: 20, paddingBottom: 10 }}>
-        <Typography
-          sx={{
-            fontSize: 90,
-            textTransform: 'uppercase',
-          }}
-        >
-          Explore Games
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: 28,
-            fontWeight: 'light',
-            textTransform: 'uppercase',
-            fontStyle: 'italic',
-          }}
-        >
-          Based on player counts and release date
-        </Typography>
-      </Box>
-
+    <>
       <Box>
+        <Box sx={{ paddingLeft: 3, paddingTop: 20, paddingBottom: 10 }}>
+          <Typography
+            sx={{
+              fontSize: 90,
+              textTransform: 'uppercase',
+            }}
+          >
+            Explore Games
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: 28,
+              fontWeight: 'light',
+              textTransform: 'uppercase',
+              fontStyle: 'italic',
+            }}
+          >
+            Based on player counts and release date
+          </Typography>
+        </Box>
         <FormControl
           variant="standard"
           size="small"
@@ -215,6 +213,6 @@ function ExploreGames() {
           })}
         </Grid>
       </Box>
-    </Box>
+    </>
   );
 }

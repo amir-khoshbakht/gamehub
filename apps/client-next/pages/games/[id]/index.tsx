@@ -22,8 +22,13 @@ function Index() {
 
   return (
     <Box sx={{ overflow: 'auto' }}>
-      <SearchBar />
-      <ClientOnly>{id && <GameDetails id={id} />}</ClientOnly>
+      <ClientOnly>
+        {id && (
+          <Box sx={{ position: 'relative' }}>
+            <GameDetails id={id} />
+          </Box>
+        )}
+      </ClientOnly>
     </Box>
   );
 }
@@ -44,7 +49,9 @@ function GameDetails({ id }: { id: number }) {
   } = gameDetails || {};
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <>
+      <SearchBar />
+
       <Box
         //TODO : clean
 
@@ -91,7 +98,6 @@ function GameDetails({ id }: { id: number }) {
           height: '100vh',
           maxWidth: 1200,
           margin: 'auto',
-          right: 'calc((100% - 100vw)/2)',
         }}
       >
         <Paper
@@ -249,6 +255,6 @@ function GameDetails({ id }: { id: number }) {
           </Box>
         </Paper>
       </Box>
-    </Box>
+    </>
   );
 }

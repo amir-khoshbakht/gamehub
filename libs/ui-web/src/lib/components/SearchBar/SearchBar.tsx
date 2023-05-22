@@ -57,8 +57,8 @@ export const SearchBar = () => {
     <Box
       sx={{
         zIndex: 1200,
-        position: 'fixed',
-        top: 32,
+        position: 'sticky',
+        top: 20,
         left: 0,
         right: 0,
         marginX: 6,
