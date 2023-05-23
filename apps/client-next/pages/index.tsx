@@ -26,7 +26,6 @@ export default function Home() {
       {' '}
       <Box
         sx={{
-          padding: 4,
           backgroundImage: backgroundCSS,
           backgroundAttachment: 'fixed',
           height: '100vh',
@@ -69,7 +68,7 @@ function ExploreGames() {
 
   return (
     <>
-      <Box>
+      <Box sx={{ padding: 4}}>
         <Box sx={{ paddingLeft: 3, paddingTop: 20, paddingBottom: 10 }}>
           <Typography
             sx={{
