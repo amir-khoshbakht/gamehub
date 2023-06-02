@@ -15,7 +15,7 @@ client and server typescript based app Built on top of Nx monorepo
 - [NextJS](https://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Apollo GraphQL](https://www.apollographql.com/)
-- [Styled Components](https://https://mui.com/)
+- [Material Ui](https://https://mui.com/)
 - [RAWG API](https://rawg.io/apidocs)
 
 ## Screenshots
